@@ -1,0 +1,11 @@
+{
+  "name": "vcontrold",
+  "version": "0.0.1",
+  "slug": "vcontrold",
+  "description": "vcontrold daemon",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "options": {},
+  "schema": {}
+}

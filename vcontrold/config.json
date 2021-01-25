@@ -9,5 +9,8 @@
   "boot": "auto",
   "options": {},
   "schema": {},
+  "ports": {
+    "3002/tcp": 3002
+  },
   "auto_uart": true
 }

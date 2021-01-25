@@ -8,7 +8,5 @@
   "startup": "application",
   "boot": "auto",
   "options": {},
-  "schema": {},
-  "auto_uart": true,
-  "privileged": ["NET_ADMIN", "SYS_ADMIN", "SYS_RAWIO", "SYS_TIME", "SYS_NICE", "SYS_RESOURCE"],
+  "schema": {}
 }

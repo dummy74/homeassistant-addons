@@ -9,7 +9,7 @@ lsusb
 echo "########################"
 ls -la /dev/tty*
 echo "########################"
-sleep 10
+sleep 30
 
 echo "########################"
 echo "starting vcontrold ..."

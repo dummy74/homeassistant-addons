@@ -1,11 +1,14 @@
 {
   "name": "vcontrold",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "url": "https://github.com/dummy74/homeassistant-addons/tree/main/vcontrold",
   "slug": "vcontrold",
   "description": "vcontrold daemon",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
   "boot": "auto",
   "options": {},
-  "schema": {}
+  "schema": {},
+  "auto_uart": true,
+  "privileged": ["NET_ADMIN", "SYS_ADMIN", "SYS_RAWIO", "SYS_TIME", "SYS_NICE", "SYS_RESOURCE"],
 }

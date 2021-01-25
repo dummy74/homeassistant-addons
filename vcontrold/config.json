@@ -9,6 +9,8 @@
   "boot": "auto",
   "options": {},
   "schema": {},
+  "map": ["config:rw", "share:rw"],
+  "devices": ["/dev/ttyUSB0:/dev/ttyUSB0:rwm"],
   "ports": {
     "3002/tcp": 3002
   },

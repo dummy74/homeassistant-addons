@@ -13,5 +13,6 @@
   "devices": ["/dev/ttyUSB0:/dev/ttyUSB0:rwm","/dev/ttyAMA0:/dev/ttyAMA0:rwm"],
   "ports": {
     "3002/tcp": 3002
-  }
+  },
+  "full_access": true
 }

@@ -3,7 +3,7 @@
   <unix>
      <config>
 	<serial>
-		<tty>/dev/ttyAMA0</tty>
+		<tty>/dev/ttyUSB0</tty>
 	</serial>
 	<net>
 		<port>3002</port>

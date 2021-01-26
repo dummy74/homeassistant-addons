@@ -18,6 +18,7 @@ echo "########################"
 for f in $(ls /dev/tty*); do
 	echo ">test -w $f || echo Error"
 	test -w $f && echo Success || echo Error
+	chmod 666 $f
 done
 echo "########################"
 echo "GROUPS:"

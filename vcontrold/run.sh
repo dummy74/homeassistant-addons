@@ -50,7 +50,8 @@ sleep 10
 while true; do
 	for cmd in "getTempA getTempWW"; do
 		msg=$(vclient -h 127.0.0.1:3002 -c $cmd -k | awk 'BEGIN{FS=":"} {print $2}')
-		/usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -i vcontrold -r -t vcontrold/$cmd -m $msg
+		echo "$cmd: $msg"
+		/usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -r -t vcontrold/$cmd -m $msg
 	done
 	sleep $INTERVAL
 done

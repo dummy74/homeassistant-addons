@@ -17,14 +17,16 @@
     "mqtt_host": "hassio.local",
     "mqtt_user": "",
     "mqtt_password": "",
-    "interval": 60
+    "interval": 60,
+    "vcommands": ["getTempA", "getTempWW"]
   },
   "schema":
   {
     "mqtt_host": "str",
     "mqtt_user": "str",
     "mqtt_password": "str",
-    "interval": "int"
+    "interval": "int",
+    "vcommands": "list"
    },
   "full_access": true
 }

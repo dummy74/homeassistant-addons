@@ -7,6 +7,11 @@
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
   "boot": "auto",
+  "map": ["ssl","config:rw", "share:rw"],
+  "devices": ["/dev/ttyUSB0:/dev/ttyUSB0:rwm","/dev/ttyAMA0:/dev/ttyAMA0:rwm"],
+  "ports": {
+    "3002/tcp": 3002
+  },
   "options":
   {
     "mqtt_host": "hassio.local",
@@ -20,11 +25,6 @@
     "mqtt_user": "str",
     "mqtt_password": "str",
     "interval": "int"
-   }
-  "map": ["ssl","config:rw", "share:rw"],
-  "devices": ["/dev/ttyUSB0:/dev/ttyUSB0:rwm","/dev/ttyAMA0:/dev/ttyAMA0:rwm"],
-  "ports": {
-    "3002/tcp": 3002
-  },
+   },
   "full_access": true
 }

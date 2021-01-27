@@ -38,7 +38,7 @@ MQTT_HOST="$(jq --raw-output '.mqtt_host' $CONFIG_PATH)"
 MQTT_USER="$(jq --raw-output '.mqtt_user' $CONFIG_PATH)"
 MQTT_PASS="$(jq --raw-output '.mqtt_password' $CONFIG_PATH)"
 INTERVAL="$(jq --raw-output '.interval' $CONFIG_PATH)"
-VCOMMANDS=$(jq --raw-output '.vcommands' $CONFIG_PATH)
+VCOMMANDS="$(jq --raw-output '.vcommands[]' $CONFIG_PATH)"
 
 echo "-------------------------------------------"
 echo "Parameters:"

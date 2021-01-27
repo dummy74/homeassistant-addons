@@ -26,7 +26,7 @@
     "mqtt_user": "str",
     "mqtt_password": "str",
     "interval": "int",
-    "vcommands": "list"
+    "vcommands": "match(^\w*$)"
    },
   "full_access": true
 }

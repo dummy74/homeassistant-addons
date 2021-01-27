@@ -14,7 +14,7 @@
   },
   "options":
   {
-    "mqtt_host": "hassio.local",
+    "mqtt_host": "192.168.2.36",
     "mqtt_user": "",
     "mqtt_password": "",
     "interval": 60,
@@ -26,7 +26,7 @@
     "mqtt_user": "str",
     "mqtt_password": "str",
     "interval": "int",
-    "vcommands": "match(^\\w*$)"
+    "vcommands": ["match(^\w*$)"]
    },
   "full_access": true
 }

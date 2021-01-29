@@ -13,6 +13,8 @@ RUN apk add --no-cache --virtual build-deps alpine-sdk linux-headers cmake git a
     make && \
     make install && \
     apk del build-deps && \
+    cd / && \
+    rm -r /vcontrold && \
     apk add --no-cache mosquitto-clients jq
 
 # Copy data for add-on
@@ -32,23 +34,3 @@ ENV MQTT_TOPIC="homeassistant/sensor/vcontrold"
 
 CMD [ "/run.sh" ]
 
-#FROM debian:stable-slim
-#
-#RUN apt-get update && \
-#    apt-get upgrade && \
-#    apt-get install -y build-essential subversion automake autoconf telnet #libxml2-dev && \
-#    mkdir openv && \
-#    cd openv && \
-#    svn checkout svn://svn.code.sf.net/p/vcontrold/code/trunk vcontrold-#code && \
-#    cd vcontrold-code/vcontrold && \
-#    chmod +x auto-build.sh && \
-#    ./auto-build.sh && \
-#    ./configure && \
-#    make && \
-#    make install 
-#
-#ADD vcontrold.xml /etc/vcontrold/
-#ADD vito.xml /etc/vcontrold/
-#ADD startup.sh /
-#
-#ENTRYPOINT ["/startup.sh"]

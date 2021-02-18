@@ -30,9 +30,9 @@ COPY run.sh /
 RUN chmod a+x /run.sh
 
 # Switch to user 'vcontrol'
-USER vcontrol
+#USER vcontrol
 
-WORKDIR /home/vcontrol
+#WORKDIR /home/vcontrol
 
 # Define an environment variable
 # Use this variable when creating a container to specify the MQTT broker host.

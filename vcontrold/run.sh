@@ -1,10 +1,11 @@
 #!/usr/bin/with-contenv bashio
 
 echo "########################"
-for f in $(ls /dev/tty*); do
+for f in $(ls /dev/ttyUSB*); do
+    ls -la $f
 	echo ">test -w $f || echo Error"
 	test -w $f && echo Success || echo Error
-#	chmod 666 $f
+	chmod 666 $f
 done
 #sleep 10
 

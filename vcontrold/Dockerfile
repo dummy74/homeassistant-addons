@@ -26,11 +26,11 @@ RUN addgroup -S vcontrol && \
     adduser -S -D -h /usr/app/src vcontrol vcontrol && \
     addgroup vcontrol dialout
 
-# Switch to user 'vcontrol'
-USER vcontrol
-
 COPY run.sh /
 RUN chmod a+x /run.sh
+
+# Switch to user 'vcontrol'
+USER vcontrol
 
 WORKDIR /home/vcontrol
 

@@ -1,6 +1,6 @@
 {
   "name": "vcontrold",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "url": "https://github.com/dummy74/homeassistant-addons/tree/main/vcontrold",
   "slug": "vcontrold",
   "description": "vcontrold daemon",

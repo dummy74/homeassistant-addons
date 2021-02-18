@@ -22,7 +22,7 @@ ADD vcontrold.xml /etc/vcontrold/
 ADD vito.xml /etc/vcontrold/
 
 # Create a user and group 'vcontrol'
-RUN addgroup -S vcontrol \
+RUN addgroup -S vcontrol && \
     adduser -S -D -h /usr/app/src vcontrol vcontrol && \
     addgroup vcontrol dialout
 

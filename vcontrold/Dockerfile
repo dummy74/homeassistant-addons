@@ -20,10 +20,6 @@ RUN apk add --no-cache --virtual build-deps alpine-sdk linux-headers cmake git a
 # Copy data for add-on
 ADD vcontrold.xml /etc/vcontrold/
 ADD vito.xml /etc/vcontrold/
-ADD vcontrold.service /etc/systemd/system/vcontrold.service
-
-RUN systemctl enable vcontrold && \
-    systemctl start vcontrold
 
 # Create a user and group for vcontrold
 RUN adduser -S -D -h /home/vcontrol vcontrol vcontrol && \

@@ -22,8 +22,8 @@ ADD vcontrold.xml /etc/vcontrold/
 ADD vito.xml /etc/vcontrold/
 
 # Create a user and group for vcontrold
-RUN addgroup -g 18 -S audio && \
-    adduser -S -D -h /home/vcontrol vcontrol audio && \
+RUN adduser -S -D -h /home/vcontrol vcontrol vcontrol && \
+    addgroup vcontrol audio && \
     addgroup vcontrol dialout
 
 COPY run.sh /

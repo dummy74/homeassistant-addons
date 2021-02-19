@@ -1,0 +1,15 @@
+[Unit]
+Description=vcontrold daemon
+After=syslog.target systemd-udev-settle.service
+
+[Service]
+Type=forking
+ExecStartPre=/bin/ls /dev/bus/usb/001
+ExecStart=/usr/local/sbin/vcontrold -x /etc/vcontrold/vcontrold.xml
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=120
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target

@@ -10,10 +10,10 @@ done
 #sleep 10
 
 echo "########################"
-echo "starting vcontrold ..."
-sudo vcontrold --username vcontrol --groupname audio #--verbose #--nodaemon
-echo "vcontrold daemonized."
-
+#echo "starting vcontrold ..."
+#sudo vcontrold --username vcontrol --groupname audio #--verbose #--nodaemon
+#echo "vcontrold daemonized."
+systemctl status vcontrold | head
 
 CONFIG_PATH=/data/options.json
 MQTT_HOST="$(jq --raw-output '.mqtt_host' $CONFIG_PATH)"

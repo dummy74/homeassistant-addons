@@ -21,18 +21,18 @@ RUN apk add --no-cache --virtual build-deps alpine-sdk linux-headers cmake git a
 ADD vcontrold.xml /etc/vcontrold/
 ADD vito.xml /etc/vcontrold/
 
-# Create a user and group 'vcontrol'
-RUN addgroup -S vcontrol && \
-    adduser -S -D -h /usr/app/src vcontrol vcontrol && \
+# Create a user and group for vcontrold
+RUN addgroup -g 18 -S audio && \
+    adduser -S -D -h /home/vcontrol vcontrol audio && \
     addgroup vcontrol dialout
 
 COPY run.sh /
 RUN chmod a+x /run.sh
 
 # Switch to user 'vcontrol'
-#USER vcontrol
+USER vcontrol
 
-#WORKDIR /home/vcontrol
+WORKDIR /home/vcontrol
 
 # Define an environment variable
 # Use this variable when creating a container to specify the MQTT broker host.

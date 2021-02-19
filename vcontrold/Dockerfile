@@ -15,24 +15,30 @@ RUN apk add --no-cache --virtual build-deps alpine-sdk linux-headers cmake git a
     apk del build-deps && \
     cd / && \
     rm -r /vcontrold && \
-    apk add --no-cache mosquitto-clients jq
+    apk add --no-cache mosquitto-clients jq su-exec sudo
 
 # Copy data for add-on
 ADD vcontrold.xml /etc/vcontrold/
 ADD vito.xml /etc/vcontrold/
+ADD vcontrold.service /etc/systemd/system/vcontrold.service
+
+RUN systemctl enable vcontrold && \
+    systemctl start vcontrold
 
 # Create a user and group for vcontrold
 RUN adduser -S -D -h /home/vcontrol vcontrol vcontrol && \
+    echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel && \
     addgroup vcontrol audio && \
+    addgroup vcontrol wheel && \
     addgroup vcontrol dialout
 
 COPY run.sh /
 RUN chmod a+x /run.sh
 
 # Switch to user 'vcontrol'
-USER vcontrol
+#USER vcontrol
 
-WORKDIR /home/vcontrol
+#WORKDIR /home/vcontrol
 
 # Define an environment variable
 # Use this variable when creating a container to specify the MQTT broker host.

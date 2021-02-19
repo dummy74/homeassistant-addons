@@ -11,7 +11,7 @@ done
 
 echo "########################"
 echo "starting vcontrold ..."
-vcontrold --username vcontrol --groupname audio #--verbose #--nodaemon
+sudo vcontrold --username vcontrol --groupname audio #--verbose #--nodaemon
 echo "vcontrold daemonized."
 
 

@@ -34,7 +34,7 @@ while true; do
 	for cmd in $VCOMMANDS; do
 		msg=$(vclient -h 127.0.0.1:3002 -c $cmd -k | awk 'BEGIN{FS=":"} {print $2}')
 		#echo "$cmd: $msg"
-		sudo /usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -r -t vcontrold/$cmd -m $msg
+		/usr/bin/mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -r -t vcontrold/$cmd -m $msg
 	done
 	sleep $INTERVAL
 done
